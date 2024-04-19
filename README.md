@@ -78,5 +78,6 @@ total de pizzas vendidas pelo número total de pedidos.</p>
 
 ***8. Os 5 mais vendidos por quantidade***
 
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/a2ae579b-5e5f-408b-9124-00a50d634f03)
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/eab6e306-cf26-4512-bbe8-156b38c7454a)
+
 
