@@ -25,14 +25,15 @@
 ***4. Total de Pedidos:***
 <p>O número total de pedidos feitos.</p>
 
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/0f5b51c6-42e9-48d4-a10b-49134a44491e)
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/392700fc-8f0b-4ae8-bef2-4a4cd7c7d7f2)
 
 
 ***5. Média de Pizzas por Pedido:***
 <p>Quantidade média de pizzas vendidas por pedido, calculada dividindo o número 
 total de pizzas vendidas pelo número total de pedidos.</p>
 
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/84305f8d-9b45-4a27-a105-3dd59e1c61d7)
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/0d740e47-1815-484c-8284-8de9ab917658)
+
 
 
 
