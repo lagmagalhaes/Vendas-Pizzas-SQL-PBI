@@ -5,18 +5,21 @@
 ***1. Receita Total:***
 <p>A soma do preço total de todos os pedidos de pizza.</p>
 
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/faade6b3-29db-4e01-a61f-5012d8a66890)
+
 
 
 
 ***2. Valor Médio do Pedido:***
 <p>O valor médio gasto por pedido, calculado dividindo a receita total pelo número total de pedidos.</p>
 
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/458c7ce1-2f0e-4663-953a-2c4adb84d82a)
 
 
 ***3. Total de Pizzas Vendidas:***
 <p>Soma das quantidades de todas as pizzas vendidas.</p>
 
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/2763300b-7ea6-4875-9153-0aca26373164)
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/0e89f191-c004-4c94-8df0-ba58375845f2)
 
 
 ***4. Total de Pedidos:***
