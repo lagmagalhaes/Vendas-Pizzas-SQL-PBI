@@ -4,6 +4,7 @@
 ### A. KPI’s
 ***1. Receita Total:***
 <p>A soma do preço total de todos os pedidos de pizza.</p>
+
 ![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/92463c42-18bb-4258-a3b3-48b0296ac1ec)
 
 ***2. Valor Médio do Pedido:***
