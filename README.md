@@ -2,19 +2,18 @@
 
 ## Parte SQL
 ### A. KPI’s
-#### 1. Receita Total: 
-**A soma do preço total de todos os pedidos de pizza.**
-select 
+***1. Receita Total:***
+A soma do preço total de todos os pedidos de pizza.
+<p>select 
 SUM(total_price) AS Total_Revenue
-from pizza_sales
+from pizza_sales</p>
 
 
---2. Valor Médio do Pedido:
---O valor médio gasto por pedido, calculado dividindo a receita total pelo número total de pedidos.
-
-select 
+***2. Valor Médio do Pedido:***
+O valor médio gasto por pedido, calculado dividindo a receita total pelo número total de pedidos.
+<p>select 
 SUM(total_price)/ COUNT (DISTINCT ORDER_ID) AS Avg_Order_Value
-from pizza_sales
+from pizza_sales</p>
 
 --3. Total de Pizzas Vendidas: 
 --Soma das quantidades de todas as pizzas vendidas.
