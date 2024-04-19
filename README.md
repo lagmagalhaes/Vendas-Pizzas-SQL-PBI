@@ -10,32 +10,30 @@ A soma do preço total de todos os pedidos de pizza.
 
 
 ***2. Valor Médio do Pedido:***
-O valor médio gasto por pedido, calculado dividindo a receita total pelo número total de pedidos.
+<p>O valor médio gasto por pedido, calculado dividindo a receita total pelo número total de pedidos.</p>
 <p>select </p>
 <p>SUM(total_price)/ COUNT (DISTINCT ORDER_ID) AS Avg_Order_Value</p>
 <p>from pizza_sales</p>
 
---3. Total de Pizzas Vendidas: 
---Soma das quantidades de todas as pizzas vendidas.
+***3. Total de Pizzas Vendidas:***
+<p>Soma das quantidades de todas as pizzas vendidas.</p>
+<p>select </p>
+<p>sum(quantity) as Total_Pizzas_Vendidas</p>
+<p>from pizza_sales</p>
 
-select 
-sum(quantity) as Total_Pizzas_Vendidas
-from pizza_sales
+***4. Total de Pedidos:***
+-<p>O número total de pedidos feitos.</p>
+<p>select </p>
+<p>count(distinct order_id) as Total_Pedidos</p>
+<p>from pizza_sales</p>
 
---4. Total de Pedidos:
---O número total de pedidos feitos.
-
-select 
-count(distinct order_id) as Total_Pedidos
-from pizza_sales
-
---5. Média de Pizzas por Pedido: 
---Quantidade média de pizzas vendidas por pedido, calculada dividindo o número 
---total de pizzas vendidas pelo número total de pedidos.
-
-SELECT CAST(CAST(SUM(quantity) AS DECIMAL(10,2)) / 
-       CAST(COUNT(DISTINCT order_id) AS DECIMAL(10,2)) AS DECIMAL(10,2)) AS AVG_PIZZA_POR_PEDIDO
-FROM pizza_sales
+***5. Média de Pizzas por Pedido:***
+<p>Quantidade média de pizzas vendidas por pedido, calculada dividindo o número 
+total de pizzas vendidas pelo número total de pedidos.</p>
+<p>SELECT</p>
+<p>CAST(CAST(SUM(quantity) AS DECIMAL(10,2)) / 
+ CAST(COUNT(DISTINCT order_id) AS DECIMAL(10,2)) AS DECIMAL(10,2)) AS AVG_PIZZA_POR_PEDIDO</p>
+<p>FROM pizza_sales</p>
 
 
 
