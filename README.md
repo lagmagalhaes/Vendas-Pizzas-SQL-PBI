@@ -18,7 +18,8 @@
 ***3. Total de Pizzas Vendidas:***
 <p>Soma das quantidades de todas as pizzas vendidas.</p>
 
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/b06e485c-2678-4e7c-a919-e99dfcfe4618)
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/dc8e7e5e-da8b-40ef-8ad3-1a42fd1724b0)
+
 
 
 ***4. Total de Pedidos:***
