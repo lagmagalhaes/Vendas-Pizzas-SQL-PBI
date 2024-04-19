@@ -4,36 +4,28 @@
 ### A. KPI’s
 ***1. Receita Total:***
 A soma do preço total de todos os pedidos de pizza.
-<p>select</p>
-<p></p>SUM(total_price) AS Total_Revenue</p>
-<p>from pizza_sales</p>
-
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/92463c42-18bb-4258-a3b3-48b0296ac1ec)
 
 ***2. Valor Médio do Pedido:***
-<p>O valor médio gasto por pedido, calculado dividindo a receita total pelo número total de pedidos.</p>
-<p>select </p>
-<p>SUM(total_price)/ COUNT (DISTINCT ORDER_ID) AS Avg_Order_Value</p>
-<p>from pizza_sales</p>
+O valor médio gasto por pedido, calculado dividindo a receita total pelo número total de pedidos.
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/902cdf4d-bcc8-4313-a537-db11e452d85e)
+
 
 ***3. Total de Pizzas Vendidas:***
-<p>Soma das quantidades de todas as pizzas vendidas.</p>
-<p>select </p>
-<p>sum(quantity) as Total_Pizzas_Vendidas</p>
-<p>from pizza_sales</p>
+Soma das quantidades de todas as pizzas vendidas.
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/b06e485c-2678-4e7c-a919-e99dfcfe4618)
+
 
 ***4. Total de Pedidos:***
--<p>O número total de pedidos feitos.</p>
-<p>select </p>
-<p>count(distinct order_id) as Total_Pedidos</p>
-<p>from pizza_sales</p>
+O número total de pedidos feitos.
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/0f5b51c6-42e9-48d4-a10b-49134a44491e)
+
 
 ***5. Média de Pizzas por Pedido:***
-<p>Quantidade média de pizzas vendidas por pedido, calculada dividindo o número 
-total de pizzas vendidas pelo número total de pedidos.</p>
-<p>SELECT</p>
-<p>CAST(CAST(SUM(quantity) AS DECIMAL(10,2)) / 
- CAST(COUNT(DISTINCT order_id) AS DECIMAL(10,2)) AS DECIMAL(10,2)) AS AVG_PIZZA_POR_PEDIDO</p>
-<p>FROM pizza_sales</p>
+Quantidade média de pizzas vendidas por pedido, calculada dividindo o número 
+total de pizzas vendidas pelo número total de pedidos.
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/84305f8d-9b45-4a27-a105-3dd59e1c61d7)
+
 
 
 
