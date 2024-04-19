@@ -40,40 +40,45 @@ total de pizzas vendidas pelo número total de pedidos.</p>
 ### B. GRÁFICOS
 ***1. Tendência diaria para total de pedidos:***
 
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/b3391413-e366-4155-bf60-27d727e9986d)
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/bb9b809d-8bf0-4237-9fae-b2e48bb4a37f)
+
 
 
 ***2. Tendência mensal para total de pedidos:***
 
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/a54fd352-c056-4704-83f9-0d5551c7385a)
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/7f434164-52f5-473e-90c1-0098be4b95df)
 
 
 ***3. Porcentagem de vendas por categoria de pizza:***
 
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/cb7df652-d2b4-4792-9535-b290c98ffd4b)
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/796d81c8-5e0e-467a-b4e5-79368169fe36)
 
 
 
 
 ***4. Porcentagem de vendas por tamanho de pizza:***
 
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/b03d3a8e-5406-4f8f-8f6e-01a25f398a49)
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/51ca64fa-e613-4cdb-b7bf-5f879711d262)
+
 
 
 ***5. Total de pizzas vendidas por categoria de pizza:***
 
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/3cf21f8f-784e-418b-865e-9e252bffad02)
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/1af283f7-c42b-41ec-9de4-b86c8a957acc)
+
 
 
 ***6. Os 5 mais vendidos por receita, quantidade total e total de pedidos***
 
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/baffd11d-5ec7-48ed-8965-7a545828d993)
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/76b78bef-5817-4964-9d6b-bb571709e974)
+
 
 
 
 ***7. Os 5 mais vendidos por receita, quantidade total e total de pedidos***
 
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/1bd6a32c-b095-40fa-83b1-3caa4502ce52)
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/8aa627af-bef7-4daf-90dd-805cf1384331)
+
 
 
 ***8. Os 5 mais vendidos por quantidade***
