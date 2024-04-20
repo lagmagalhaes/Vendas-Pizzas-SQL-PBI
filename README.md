@@ -1,88 +1,115 @@
-# Vendas-Pizzas-Sql-Power-BI
+-A. KPI’s
+--1. Receita Total: 
+--A soma do preço total de todos os pedidos de pizza.
 
-## Parte SQL
-### A. KPI’s
-***1. Receita Total:***
-<p>A soma do preço total de todos os pedidos de pizza.</p>
-
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/faade6b3-29db-4e01-a61f-5012d8a66890)
-
+select 
+SUM(total_price) AS Total_Revenue
+from pizza_sales
 
 
+--2. Valor Médio do Pedido:
+--O valor médio gasto por pedido, calculado dividindo a receita total pelo número total de pedidos.
 
-***2. Valor Médio do Pedido:***
-<p>O valor médio gasto por pedido, calculado dividindo a receita total pelo número total de pedidos.</p>
+select 
+SUM(total_price)/ COUNT (DISTINCT ORDER_ID) AS Avg_Order_Value
+from pizza_sales
 
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/458c7ce1-2f0e-4663-953a-2c4adb84d82a)
+--3. Total de Pizzas Vendidas: 
+--Soma das quantidades de todas as pizzas vendidas.
 
+select 
+sum(quantity) as Total_Pizzas_Vendidas
+from pizza_sales
 
-***3. Total de Pizzas Vendidas:***
-<p>Soma das quantidades de todas as pizzas vendidas.</p>
+--4. Total de Pedidos:
+--O número total de pedidos feitos.
 
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/0e89f191-c004-4c94-8df0-ba58375845f2)
+select 
+count(distinct order_id) as Total_Pedidos
+from pizza_sales
 
+--5. Média de Pizzas por Pedido: 
+--Quantidade média de pizzas vendidas por pedido, calculada dividindo o número 
+--total de pizzas vendidas pelo número total de pedidos.
 
-***4. Total de Pedidos:***
-<p>O número total de pedidos feitos.</p>
-
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/392700fc-8f0b-4ae8-bef2-4a4cd7c7d7f2)
-
-
-***5. Média de Pizzas por Pedido:***
-<p>Quantidade média de pizzas vendidas por pedido, calculada dividindo o número 
-total de pizzas vendidas pelo número total de pedidos.</p>
-
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/0d740e47-1815-484c-8284-8de9ab917658)
-
-
-
-
-### B. GRÁFICOS
-***1. Tendência diaria para total de pedidos:***
-
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/bb9b809d-8bf0-4237-9fae-b2e48bb4a37f)
+SELECT CAST(CAST(SUM(quantity) AS DECIMAL(10,2)) / 
+       CAST(COUNT(DISTINCT order_id) AS DECIMAL(10,2)) AS DECIMAL(10,2)) AS AVG_PIZZA_POR_PEDIDO
+FROM pizza_sales
 
 
 
-***2. Tendência mensal para total de pedidos:***
+--B. GRÁFICOS
+--1. Tendência diaria para total de pedidos:
 
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/7f434164-52f5-473e-90c1-0098be4b95df)
+SELECT DATENAME(DW, order_date) AS order_day,
+COUNT(DISTINCT order_id) AS total_orders 
+FROM pizza_sales
+GROUP BY DATENAME(DW, order_date)
 
+-- 2. Tendência mensal para total de pedidos:
 
-***3. Porcentagem de vendas por categoria de pizza:***
+select DATENAME(MONTH,
+order_date) as Month_Name, 
+COUNT(DISTINCT order_id) as Total_Orders
+from pizza_sales
+GROUP BY DATENAME(MONTH, order_date)
 
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/796d81c8-5e0e-467a-b4e5-79368169fe36)
-
-
-
-
-***4. Porcentagem de vendas por tamanho de pizza:***
-
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/51ca64fa-e613-4cdb-b7bf-5f879711d262)
-
-
-
-***5. Total de pizzas vendidas por categoria de pizza:***
-
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/1af283f7-c42b-41ec-9de4-b86c8a957acc)
-
-
-
-***6. Os 5 mais vendidos por receita, quantidade total e total de pedidos***
-
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/76b78bef-5817-4964-9d6b-bb571709e974)
+-- 3. Porcentagem de vendas por categoria de pizza:
+SELECT pizza_category, 
+CAST(SUM(total_price) AS DECIMAL(10,2)) as total_revenue,
+CAST(SUM(total_price) * 100 / (SELECT SUM(total_price)from pizza_sales) AS DECIMAL(10,2)) AS PCT
+FROM pizza_sales
+GROUP BY pizza_category
 
 
 
+-- 4. Porcentagem de vendas por tamanho de pizza:
 
-***7. Os 5 mais vendidos por receita, quantidade total e total de pedidos***
+SELECT pizza_size,
+CAST(SUM(total_price) AS DECIMAL(10,2)) as total_revenue,
+CAST(SUM(total_price) * 100 / (SELECT SUM(total_price) from pizza_sales) AS DECIMAL(10,2)) AS PCT
+FROM pizza_sales
+GROUP BY pizza_size
+ORDER BY pizza_size
 
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/8aa627af-bef7-4daf-90dd-805cf1384331)
 
 
+-- 5. Total de pizzas vendidas por categoria de pizza:
+SELECT pizza_category,
+SUM(quantity) as Total_Quantity_Sold
+FROM pizza_sales
+WHERE MONTH(order_date) = 2
+GROUP BY pizza_category
+ORDER BY Total_Quantity_Sold DESC
 
-***8. Os 5 mais vendidos por quantidade***
+-- 6. Os 5 mais vendidos por receita, quantidade total e total de pedidos
+SELECT Top 5 pizza_name, SUM(total_price) AS Total_Revenue
+FROM pizza_sales
+GROUP BY pizza_name
+ORDER BY Total_Revenue DESC
 
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-Sql-Power-BI/assets/166879716/eab6e306-cf26-4512-bbe8-156b38c7454a)
+
+-- 7. Os 5 mais vendidos por receita, quantidade total e total de pedidos
+SELECT Top 5 pizza_name, SUM(total_price) AS Total_Revenue
+FROM pizza_sales
+GROUP BY pizza_name
+ORDER BY Total_Revenue ASC
+
+-- 8. Os 5 mais vendidos por quantidade
+SELECT Top 5 pizza_name, SUM(quantity) AS Total_Pizza_Sold
+FROM pizza_sales
+GROUP BY pizza_name
+ORDER BY Total_Pizza_Sold DESC
+
+SELECT Top 5 pizza_name, COUNT(DISTINCT order_id) AS Total_Orders
+FROM pizza_sales
+GROUP BY pizza_name
+ORDER BY Total_Orders DESC
+
+SELECT Top 5 pizza_name, COUNT(DISTINCT order_id) AS Total_Orders
+FROM pizza_sales
+GROUP BY pizza_name
+ORDER BY Total_Orders ASC
+
 
 
