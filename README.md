@@ -1,40 +1,35 @@
--A. KPI’s
---1. Receita Total: 
---A soma do preço total de todos os pedidos de pizza.
+## A. KPI’s
+**1. Receita Total:**
+A soma do preço total de todos os pedidos de pizza.
 
-select 
-SUM(total_price) AS Total_Revenue
-from pizza_sales
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/fa5334f6-830a-452d-9981-f119a561a126)
 
 
---2. Valor Médio do Pedido:
---O valor médio gasto por pedido, calculado dividindo a receita total pelo número total de pedidos.
 
-select 
-SUM(total_price)/ COUNT (DISTINCT ORDER_ID) AS Avg_Order_Value
-from pizza_sales
+**2. Valor Médio do Pedido:**
+O valor médio gasto por pedido, calculado dividindo a receita total pelo número total de pedidos.
 
---3. Total de Pizzas Vendidas: 
---Soma das quantidades de todas as pizzas vendidas.
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/e722e2c7-1348-4355-ac34-1d75d0ed23f8)
 
-select 
-sum(quantity) as Total_Pizzas_Vendidas
-from pizza_sales
 
---4. Total de Pedidos:
---O número total de pedidos feitos.
+**3. Total de Pizzas Vendidas:**
+Soma das quantidades de todas as pizzas vendidas.
 
-select 
-count(distinct order_id) as Total_Pedidos
-from pizza_sales
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/81d791e3-567f-43c9-b442-da120cf56252)
 
---5. Média de Pizzas por Pedido: 
---Quantidade média de pizzas vendidas por pedido, calculada dividindo o número 
---total de pizzas vendidas pelo número total de pedidos.
 
-SELECT CAST(CAST(SUM(quantity) AS DECIMAL(10,2)) / 
-       CAST(COUNT(DISTINCT order_id) AS DECIMAL(10,2)) AS DECIMAL(10,2)) AS AVG_PIZZA_POR_PEDIDO
-FROM pizza_sales
+**4. Total de Pedidos:**
+O número total de pedidos feitos.
+
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/e5e6a350-4618-4838-aec1-a2a1f21fe857)
+
+
+**5. Média de Pizzas por Pedido:** 
+Quantidade média de pizzas vendidas por pedido, calculada dividindo o número 
+total de pizzas vendidas pelo número total de pedidos.
+
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/465e5000-91f3-467a-b9b8-3a648e5448f7)
+
 
 
 
