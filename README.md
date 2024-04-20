@@ -34,7 +34,7 @@ total de pizzas vendidas pelo número total de pedidos.
 
 
 
-## B. GRÁFICOS###
+## B. GRÁFICOS
 
 **1. Tendência diaria para total de pedidos:**
 
