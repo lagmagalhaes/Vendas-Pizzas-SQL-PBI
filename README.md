@@ -28,83 +28,55 @@ O número total de pedidos feitos.
 Quantidade média de pizzas vendidas por pedido, calculada dividindo o número 
 total de pizzas vendidas pelo número total de pedidos.
 
-![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/465e5000-91f3-467a-b9b8-3a648e5448f7)
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/4bfa860a-2414-4f5a-82c4-d907006b5e20)
 
 
 
 
---B. GRÁFICOS
---1. Tendência diaria para total de pedidos:
 
-SELECT DATENAME(DW, order_date) AS order_day,
-COUNT(DISTINCT order_id) AS total_orders 
-FROM pizza_sales
-GROUP BY DATENAME(DW, order_date)
+## B. GRÁFICOS###
 
--- 2. Tendência mensal para total de pedidos:
+**1. Tendência diaria para total de pedidos:**
 
-select DATENAME(MONTH,
-order_date) as Month_Name, 
-COUNT(DISTINCT order_id) as Total_Orders
-from pizza_sales
-GROUP BY DATENAME(MONTH, order_date)
-
--- 3. Porcentagem de vendas por categoria de pizza:
-SELECT pizza_category, 
-CAST(SUM(total_price) AS DECIMAL(10,2)) as total_revenue,
-CAST(SUM(total_price) * 100 / (SELECT SUM(total_price)from pizza_sales) AS DECIMAL(10,2)) AS PCT
-FROM pizza_sales
-GROUP BY pizza_category
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/8cddd3bb-4dcd-41ef-8fa6-55839d25c93f)
 
 
+**2. Tendência mensal para total de pedidos:**
 
--- 4. Porcentagem de vendas por tamanho de pizza:
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/4231bb42-6d50-47e1-96f8-f2e0569b72dd)
 
-SELECT pizza_size,
-CAST(SUM(total_price) AS DECIMAL(10,2)) as total_revenue,
-CAST(SUM(total_price) * 100 / (SELECT SUM(total_price) from pizza_sales) AS DECIMAL(10,2)) AS PCT
-FROM pizza_sales
-GROUP BY pizza_size
-ORDER BY pizza_size
+
+**3. Porcentagem de vendas por categoria de pizza:**
+
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/f066cb09-0ca3-4fe9-8216-96b230134a02)
+
+
+**4. Porcentagem de vendas por tamanho de pizza:**
+
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/489b8869-26b5-4d49-ab88-f78f9c46354b)
 
 
 
--- 5. Total de pizzas vendidas por categoria de pizza:
-SELECT pizza_category,
-SUM(quantity) as Total_Quantity_Sold
-FROM pizza_sales
-WHERE MONTH(order_date) = 2
-GROUP BY pizza_category
-ORDER BY Total_Quantity_Sold DESC
 
--- 6. Os 5 mais vendidos por receita, quantidade total e total de pedidos
-SELECT Top 5 pizza_name, SUM(total_price) AS Total_Revenue
-FROM pizza_sales
-GROUP BY pizza_name
-ORDER BY Total_Revenue DESC
+**5. Total de pizzas vendidas por categoria de pizza:**
+
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/52809f80-17d6-4125-adfa-062c6bf8c1bd)
 
 
--- 7. Os 5 mais vendidos por receita, quantidade total e total de pedidos
-SELECT Top 5 pizza_name, SUM(total_price) AS Total_Revenue
-FROM pizza_sales
-GROUP BY pizza_name
-ORDER BY Total_Revenue ASC
+**6. Os 5 mais vendidos por receita, quantidade total e total de pedidos**
 
--- 8. Os 5 mais vendidos por quantidade
-SELECT Top 5 pizza_name, SUM(quantity) AS Total_Pizza_Sold
-FROM pizza_sales
-GROUP BY pizza_name
-ORDER BY Total_Pizza_Sold DESC
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/e58633dd-ec8e-415c-bcfc-24d6860232ee)
 
-SELECT Top 5 pizza_name, COUNT(DISTINCT order_id) AS Total_Orders
-FROM pizza_sales
-GROUP BY pizza_name
-ORDER BY Total_Orders DESC
 
-SELECT Top 5 pizza_name, COUNT(DISTINCT order_id) AS Total_Orders
-FROM pizza_sales
-GROUP BY pizza_name
-ORDER BY Total_Orders ASC
+
+**7. Os 5 mais vendidos por receita, quantidade total e total de pedidos**
+
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/2acd15fa-5ffd-44c9-aeda-206a76124aed)
+
+** 8. Os 5 mais vendidos por quantidade**
+
+![image](https://github.com/lagmagalhaes/Vendas-Pizzas-SQL-PBI/assets/166879716/c40e1355-723b-4337-a0ab-271695e3320f)
+
 
 
 
